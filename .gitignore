@@ -1,0 +1,8 @@
+# Custom
+.DS_Store
+.gradle/*
+.idea/*
+build/*
+gradle/*
+target/*
+*.iml
