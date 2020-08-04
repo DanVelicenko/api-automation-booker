@@ -139,3 +139,5 @@ Feature: Booker-example Feature
     Then  user gets status code "201"
     And   the user gets the requested booking
     Then  user gets status code "404"
+
+#    Mainly all of them works - made with help of team.Ability: Nice
