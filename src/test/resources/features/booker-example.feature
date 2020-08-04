@@ -30,11 +30,11 @@ Feature: Booker-example Feature
   @runx
   Scenario: Booking - GetBooking
     When  the user requests booking with following data:
-      | firstname                 | Mike       |
-      | lastname                  | Lidstrom   |
-      | totalprice                | 543        |
+      | firstname                 | Natan       |
+      | lastname                  | Ratatan   |
+      | totalprice                | 999        |
       | depositpaid               | true       |
-      | additionalneeds           | Jacuzzi    |
+      | additionalneeds           | Ratatatatatat    |
       | bookingdates --> checkin  | 2020-05-13 |
       | bookingdates --> checkout | 2020-05-15 |
     Then  user gets status code "200"
@@ -42,11 +42,11 @@ Feature: Booker-example Feature
     When  the user gets the requested booking
     Then  user gets status code "200"
     And   the response contains the following values:
-      | firstname       | Mike       |
-      | lastname        | Lidstrom   |
-      | totalprice      | 543        |
+      | firstname       | Natan       |
+      | lastname        | Ratatan   |
+      | totalprice      | 999        |
       | depositpaid     | true       |
-      | additionalneeds | Jacuzzi    |
+      | additionalneeds | Ratatatatatat    |
     And   the path "bookingdates" contains the following values:
       | checkin  | 2020-05-13 |
       | checkout | 2020-05-15 |
@@ -55,9 +55,9 @@ Feature: Booker-example Feature
   Scenario: Booking - UpdateBooking
     Given the user requests token with username "admin" and password "password123"
     When  the user requests booking with following data:
-      | firstname                 | Mike       |
-      | lastname                  | Lidstrom   |
-      | totalprice                | 543        |
+      | firstname                 | Natan       |
+      | lastname                  | Ratatan   |
+      | totalprice                | 999        |
       | depositpaid               | true       |
       | additionalneeds           | Jacuzzi    |
       | bookingdates --> checkin  | 2020-05-13 |
@@ -65,23 +65,23 @@ Feature: Booker-example Feature
     Then  user gets status code "200"
     # And   the user received one value in path "bookingid" and sets session variable with this name "bookingId"
     When  the user requests to update booking with following data:
-      | firstname                 | Mike       |
-      | lastname                  | Sundstrom  |
-      | totalprice                | 700        |
+      | firstname                 | Borjomi       |
+      | lastname                  | SparklyOne  |
+      | totalprice                | 1        |
       | depositpaid               | true       |
-      | additionalneeds           | Vodka      |
+      | additionalneeds           | Oil      |
       | bookingdates --> checkin  | 2020-05-13 |
-      | bookingdates --> checkout | 2020-05-20 |
+      | bookingdates --> checkout | 2020-05-15 |
     Then  user gets status code "200"
     And   the response contains the following values:
-      | firstname       | Mike       |
-      | lastname        | Sundstrom  |
-      | totalprice      | 700        |
+      | firstname       | Borjomi       |
+      | lastname        | SparklyOne  |
+      | totalprice      | 1        |
       | depositpaid     | true       |
-      | additionalneeds | Vodka      |
+      | additionalneeds | Oil      |
     And   the path "bookingdates" contains the following values:
       | checkin  | 2020-05-13 |
-      | checkout | 2020-05-20 |
+      | checkout | 2020-05-15 |
 
   @runx
   Scenario: Booking - UpdateBooking - Negative
@@ -105,11 +105,11 @@ Feature: Booker-example Feature
   Scenario: Booking - PartialUpdateBooking
     Given the user requests token with username "admin" and password "password123"
     When  the user requests booking with following data:
-      | firstname                 | Mike       |
-      | lastname                  | Lidstrom   |
-      | totalprice                | 543        |
+      | firstname                 | Loky       |
+      | lastname                  | Brokoly   |
+      | totalprice                | 88888888        |
       | depositpaid               | true       |
-      | additionalneeds           | Jacuzzi    |
+      | additionalneeds           | BrotherHood    |
       | bookingdates --> checkin  | 2020-05-13 |
       | bookingdates --> checkout | 2020-05-15 |
     Then  user gets status code "200"
